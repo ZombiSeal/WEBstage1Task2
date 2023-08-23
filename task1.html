@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>    
+    <title>Task1</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1 class="title">Задание 1</h1>
+            <h2 class="subtitle">Создать страницу на которой, есть чекбоксы, изначально не отмеченные. Сделайте так, чтобы только 3 чекбокса из них могли быть отмеченными. При попытке отметить 4-тый чекбокс ничего не должно происходить</h2>        
+        </div>
+        <main>
+            <div class="content">
+                <div class="content__item">
+                    <input class="content__checkbox checkbox" type="checkbox" value="1"> 
+                    <p class="content__text">1</p>
+                </div>
+                <div class="content__item">
+                    <input class="content__checkbox checkbox" type="checkbox" value="2"> 
+                    <p class="content__text">2</p>
+                </div>
+                <div class="content__item">
+                    <input class="content__checkbox checkbox" type="checkbox" value="3"> 
+                    <p class="content__text">3</p>
+                </div>
+                <div class="content__item">
+                    <input class="content__checkbox checkbox" type="checkbox" value="4"> 
+                    <p class="content__text">4</p>
+                </div>
+            </div>
+            <a href="index.html" class="back">Назад</a>
+        </main>
+    </div>
+    <script>
+        // $(".checkbox").last().prop("disabled", true);
+        $(".checkbox").last().on("click", function() {
+            $(this).prop("checked", false);
+        })
+    </script>
+</body>
+</html>

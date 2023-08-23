@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>     
+    <title>Task2</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1 class="title">Задание 2</h1>
+            <h2 class="subtitle">Создать странницу с набором ссылок двух типов 1 тип ссылки на ресурсы текущего сайта и 2 тип ссылки ведущие на сторонний сайт Найдите все ссылки, ведущие на другой сайт и добавьте им атрибут "target"="_blank"</h2>        
+        </div>
+        <main>
+            <div class="content">
+                <div class="content__item">
+                    <a href="https://code.mu/ru/javascript/lib/jquery/book/prime/basis/intro/" class="content__link">Внешний ресурс</a>
+                </div>
+                <div class="content__item">
+                    <a href="index.html" class="content__link">Текущий сайт</a>
+                </div>
+                <div class="content__item">
+                    <a href="index.html" class="content__link">Текущий сайт</a>
+                </div>
+                <div class="content__item">
+                    <a href="https://code.mu/ru/javascript/lib/jquery/book/prime/basis/intro/" class="content__link">Внешний ресурс</a>
+                </div>
+                <div class="content__item">
+                    <a href="https://code.mu/ru/javascript/lib/jquery/book/prime/basis/intro/" class="content__link">Внешний ресурс</a>
+                </div>
+                <div class="content__item">
+                    <a href="index.html" class="content__link">Текущий сайт</a>
+                </div>
+            </div>
+            <a href="index.html" class="back">Назад</a>
+        </main>
+    </div>
+    <script>
+        let reg = new RegExp("^https:\/\/");
+        $(".content__link").each(function(){
+            if (reg.test($(this).attr("href"))){
+                $(this).attr("target", "_blank");
+            }
+        })
+
+    </script>
+</body>
+</html>

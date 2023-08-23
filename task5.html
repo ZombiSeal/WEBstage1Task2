@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Task5</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1 class="title">Задание 5</h1>
+            <h2 class="subtitle">Создать страницу, на которой необходимо покрасить все буквы текста в заданном элементе
+                в разные случайные цвета. Список цветов должен хранится в массиве. Две соседние буквы не должны иметь
+                одинаковый цвет.
+            </h2>
+        </div>
+        <main>
+            <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum
+            </p>
+            <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eufugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                officiadeserunt mollit anim id est laborum
+            </p>
+            <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum
+            </p>
+            <a href="index.html" class="back">Назад</a>
+        </main>
+    </div>
+    <script>
+        let colors = ["red", "blue", "green", "pink"];
+        let prevColor = "black";
+        let text = $(".text").eq(1).text();
+
+        let spanText = "";
+
+        [...text].forEach((el) => {
+            let randIndex = Math.floor(Math.random() * colors.length);
+            let color = colors[randIndex];
+
+            while (prevColor == color) 
+            {
+                randIndex = Math.floor(Math.random() * colors.length);
+                color = colors[randIndex];
+            
+            }
+
+            prevColor = color
+
+            el = `<span style='color:${color}'>${el}</span>`;
+            spanText += el;
+        })
+
+        $(".text").eq(1).html(spanText);
+    </script>
+</body>
+
+</html>

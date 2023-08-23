@@ -1,0 +1,122 @@
+/* Reset and base styles  */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+
+ul, ul li {
+	list-style: none;
+}
+
+/* My Style */
+
+
+.wrapper{
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav__item {
+    font-size: 24px;
+    font-weight: bold;
+    transition: all .5s ease-in-out;
+}
+
+.nav__item:hover {
+    font-size: 32px;
+}
+
+.content {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.content__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.content__item_col{
+    flex-direction: column;
+}
+
+.content__checkbox {
+    width: 50px;
+    height: 50px;
+}
+
+.content__text {
+    font-size: 24px;
+}
+
+.back {
+    font-weight: bold;
+}
+
+.input {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.input_small {
+    width: 100px;
+}
+
+.input_big {
+    width: 500px;
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #00eb91;
+}
+
+.text {
+    font-size: 20px;
+    margin: 20px 0;
+}
